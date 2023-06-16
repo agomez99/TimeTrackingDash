@@ -77,7 +77,6 @@ export default function Home() {
               </Card>
             </Col>
             <Col>
-
               {displayData(workTimeframes, workTitle)}
               {displayData(playTimeframes, playTitle)}
             </Col>
