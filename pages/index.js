@@ -7,11 +7,8 @@ import data from '../data.json';
 
 export default function Home() {
   const [selectedTimeframe, setSelectedTimeframe] = useState('daily');
-
   const timeframes = ['daily', 'weekly', 'monthly'];
   const dots = Array(3).fill('.'); // creates an array with 3 dots
-
-
 
   const handleTimeframeClick = (timeframe) => {
     setSelectedTimeframe(timeframe);
@@ -29,7 +26,6 @@ export default function Home() {
     const currentValue = timeframeData ? timeframeData.current : null;
     const previousValue = timeframeData ? timeframeData.previous : null;
 
-
     return (
       <div >
         <Head>
@@ -41,22 +37,22 @@ export default function Home() {
             <div className={styles.cardtopinfo}>
               <h5>{title}</h5>
               <h5 className={styles.card_dots}>
-              {dots.map((dot, index) => (
-                <a
-                  key={index}
-                  onClick={() => handleTimeframeClick(timeframes[index])}
-                  className={timeframes[index] === selectedTimeframe ? styles.selected : ''}
-                  style={{
-                    textDecoration: 'none',
-                    color: 'hsl(235, 45%, 61%)',
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {dot}
-                </a>
-              ))}
-            </h5>
+                {dots.map((dot, index) => (
+                  <a
+                    key={index}
+                    onClick={() => handleTimeframeClick(timeframes[index])}
+                    className={timeframes[index] === selectedTimeframe ? styles.selected : ''}
+                    style={{
+                      textDecoration: 'none',
+                      color: 'hsl(235, 45%, 61%)',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {dot}
+                  </a>
+                ))}
+              </h5>
             </div>
             <div className={styles.cardbottominfo}>
               <p className={styles.card_value}>{currentValue}hrs</p>
@@ -67,7 +63,6 @@ export default function Home() {
       </div>
     );
   }
-  
   return (
     <div className={styles.container}>
       <Head>
