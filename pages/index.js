@@ -31,14 +31,14 @@ export default function Home() {
     
     return (
       <div >
-      <div className={styles.card_background_work}>
-
-      </div>
+            <Head>
+        <title>Frontend Mentor | Time tracking dashboard</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+      </Head>
       <Card className={`${styles.card1} ${title.toLowerCase()}`}>
-      
         <Card.Body>
           <h5>{title}</h5>
-          <p>{currentValue}hrs</p>
+          <p className={styles.card_value}>{currentValue}hrs</p>
           <p>Last Week - {previousValue}hrs</p>
         </Card.Body>
       </Card>
@@ -55,11 +55,14 @@ export default function Home() {
         <Container fluid>
           <Row>
             <Col>
-              <Card className={styles.card}>
-                <Card.Body>
-                  <Image src="/images/image-jeremy.png" alt="avatar" width={100} height={100} />
+  
+                <div className={styles.card_avatar}>
+                <Image src="/images/image-jeremy.png" alt="avatar" width={100} height={100} />
                   <p>Report for</p>
                   <h1 className={styles.card_title}>Jeremy Robson.</h1>
+                </div>
+                <Card className={styles.card_main}>
+                <Card.Body>
                   <div className={styles.card_body}>
                     {timeframes.map((timefr) => (
                       <p key={timefr}>
@@ -77,15 +80,27 @@ export default function Home() {
               </Card>
             </Col>
             <Col>
-              {displayData(workTimeframes, workTitle)}
+            <div className={styles.card_background_work}>
+            </div>
+            {displayData(workTimeframes, workTitle)}
+            <div className={styles.card_background_play}>
+            </div>
               {displayData(playTimeframes, playTitle)}
             </Col>
             <Col>
+            <div className={styles.card_background_study}>
+            </div>
               {displayData(studyTimeframes, studyTitle)}
+              <div className={styles.card_background_exercise}>
+            </div>
               {displayData(exerciseTimeframes, exerciseTitle)}
               </Col>
               <Col>
+              <div className={styles.card_background_social}>
+            </div>
               {displayData(socialTimeframes, socialTitle)}
+              <div className={styles.card_background_selfcare}>
+            </div>
               {displayData(selfCareTimeframes, selfCareTitle)}
             </Col>
           </Row>
