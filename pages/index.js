@@ -23,25 +23,25 @@ export default function Home() {
   const { title: socialTitle, timeframes: socialTimeframes } = data[4];
   const { title: selfCareTitle, timeframes: selfCareTimeframes } = data[5];
 
-  
+
   const displayData = (data, title) => {
     const timeframeData = data[selectedTimeframe];
     const currentValue = timeframeData ? timeframeData.current : null;
     const previousValue = timeframeData ? timeframeData.previous : null;
-    
+
     return (
       <div >
-            <Head>
-        <title>Frontend Mentor | Time tracking dashboard</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
-      </Head>
-      <Card className={`${styles.card1} ${title.toLowerCase()}`}>
-        <Card.Body>
-          <h5>{title}</h5>
-          <p className={styles.card_value}>{currentValue}hrs</p>
-          <p>Last Week - {previousValue}hrs</p>
-        </Card.Body>
-      </Card>
+        <Head>
+          <title>Frontend Mentor | Time tracking dashboard</title>
+          <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+        </Head>
+        <Card className={`${styles.card1} ${title.toLowerCase()}`}>
+          <Card.Body>
+            <h5>{title}</h5>
+            <p className={styles.card_value}>{currentValue}hrs</p>
+            <p>Last Week - {previousValue}hrs</p>
+          </Card.Body>
+        </Card>
       </div>
     );
   }
@@ -55,13 +55,13 @@ export default function Home() {
         <Container fluid>
           <Row>
             <Col>
-  
-                <div className={styles.card_avatar}>
+
+              <div className={styles.card_avatar}>
                 <Image src="/images/image-jeremy.png" alt="avatar" width={100} height={100} />
-                  <p>Report for</p>
-                  <h1 className={styles.card_title}>Jeremy Robson.</h1>
-                </div>
-                <Card className={styles.card_main}>
+                <p>Report for</p>
+                <h1 className={styles.card_title}>Jeremy Robson.</h1>
+              </div>
+              <Card className={styles.card_main}>
                 <Card.Body>
                   <div className={styles.card_body}>
                     {timeframes.map((timefr) => (
@@ -80,27 +80,27 @@ export default function Home() {
               </Card>
             </Col>
             <Col>
-            <div className={styles.card_background_work}>
-            </div>
-            {displayData(workTimeframes, workTitle)}
-            <div className={styles.card_background_play}>
-            </div>
+              <div className={styles.card_background_work}>
+              </div>
+              {displayData(workTimeframes, workTitle)}
+              <div className={styles.card_background_play}>
+              </div>
               {displayData(playTimeframes, playTitle)}
             </Col>
             <Col>
-            <div className={styles.card_background_study}>
-            </div>
+              <div className={styles.card_background_study}>
+              </div>
               {displayData(studyTimeframes, studyTitle)}
               <div className={styles.card_background_exercise}>
-            </div>
+              </div>
               {displayData(exerciseTimeframes, exerciseTitle)}
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <div className={styles.card_background_social}>
-            </div>
+              </div>
               {displayData(socialTimeframes, socialTitle)}
               <div className={styles.card_background_selfcare}>
-            </div>
+              </div>
               {displayData(selfCareTimeframes, selfCareTitle)}
             </Col>
           </Row>
