@@ -6,7 +6,7 @@ import { useState } from 'react';
 import data from '../data.json';
 
 export default function Home() {
-  const [selectedTimeframe, setSelectedTimeframe] = useState('');
+  const [selectedTimeframe, setSelectedTimeframe] = useState('daily');
 
   const timeframes = ['daily', 'weekly', 'monthly'];
 
