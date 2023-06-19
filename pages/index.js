@@ -28,8 +28,8 @@ export default function Home() {
         <Card className={`${styles.card1} ${title.toLowerCase()}`}>
           <Card.Body>
             <div className={styles.cardtopinfo}>
-              <h5 className={styles.cards_title}>{title}</h5>
-              <h5 className={styles.card_dots}>
+              <h2 className={styles.cards_title}>{title}</h2>
+              <h2 className={styles.card_dots}>
                 {dots.map((dot, index) => (
                   <a
                     key={index}
@@ -45,7 +45,7 @@ export default function Home() {
                     {dot}
                   </a>
                 ))}
-              </h5>
+              </h2>
             </div>
             <div className={styles.cardbottominfo}>
               <p className={styles.card_value}>{currentValue}hrs</p>
