@@ -29,16 +29,23 @@
   padding:30px;
   z-index: 9;
 }
+.avatar{
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+}
 .report_for{
-  color: hsl(235, 45%, 61%)
+  color: hsl(236, 100%, 87%);
+ padding-top:15%;
 }
 .card_main{
-  height:14rem;
+  height:12rem;
   width:16rem;
   background-color: hsl(235, 46%, 20%);
   color:white;
   border-radius:15px;
-  padding: 12%;
+  padding:10%;
   top: -20px;
 
 }
@@ -61,7 +68,7 @@
   background-color: hsl(235, 46%, 20%);
   color:white;
   width:15rem;
-  height:13rem;
+  height:12rem;
   margin-bottom: 5%;
   border-radius:15px;
   top: -30px;
@@ -72,65 +79,78 @@
 .card_background_work{
   background-color: hsl(15, 100%, 70%);
   height:5rem;
+  width:15rem;
   background-image: url(../public/images/icon-work.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 }
 
 .card_background_exercise{
   background-color: hsl(145, 58%, 55%);
   height:5rem;
+  width:15rem;
   background-image: url(../public/images/icon-exercise.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 
 }
 
 .card_background_play{
   background-color: hsl(195, 74%, 62%);
   height:5rem;
+  width:15rem;
   background-image: url(../public/images/icon-play.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 
 }
 
 .card_background_social{
   background-color: hsl(264, 64%, 52%);
   height:5rem;
+  width:15rem;
   background-image: url(../public/images/icon-social.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 
 }
 
 .card_background_study{
   background-color: hsl(348, 100%, 68%);
   height:5rem;
+  width:15rem;
+
   background-image: url(../public/images/icon-study.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 
 }
 
 .card_background_selfcare{
   background-color: hsl(43, 84%, 65%);
   height:5rem;
+  width:15rem;
   background-image: url(../public/images/icon-self-care.svg);
   background-repeat: no-repeat;
   background-position: right;
-  border-radius:25px 25px 0px 0px;
+  border-radius:20px 20px 0px 0px;
 
 }
 .card_title{
   color:white;
   font-weight:100;
+  margin-top: -10%;
 
+}
+
+.cards_title{
+  font-size: 1rem;
+  margin-bottom: 10%;
 }
 .card_value{
   font-size: 3rem;
@@ -138,12 +158,14 @@
   margin-top: 10%;
 }
 .card_previous{
-  color:hsl(235, 45%, 61%)
+  color:hsl(236, 100%, 87%);
 }
 .card_body{
   background-color: hsl(235, 46%, 20%);
+  padding-bottom:5px
 
 }
+
 
 .footer {
   width: 100%;
@@ -202,12 +224,6 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
 
 .card h3 {
   margin: 0 0 1rem 0;
@@ -223,7 +239,7 @@
   height: 1em;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 412px) {
   .grid {
     width: 100%;
     flex-direction: column;
@@ -245,6 +261,8 @@
   }
   .card_body{
     display: flex;
+    justify-content:space-between;
+
   }
   .card_avatar{
   position:relative;
@@ -267,6 +285,9 @@
     top: -20px;
   
   }
+  .card_previous{
+    margin-top: 20%;
+  }
 .avatar{
   width:75px;
   height:75px;
@@ -275,6 +296,24 @@
   display:block;
 }
 
+.card_background_work{
+  width:auto;
+}
+.card_background_exercise{
+  width:auto;
+}
+.card_background_social{
+  width:auto;
+}
+.card_background_play{
+  width:auto;
+}
+.card_background_study{
+  width:auto;
+}
+.card_background_selfcare{
+  width:auto;
+}
 
 
 }

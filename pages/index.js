@@ -28,7 +28,7 @@ export default function Home() {
         <Card className={`${styles.card1} ${title.toLowerCase()}`}>
           <Card.Body>
             <div className={styles.cardtopinfo}>
-              <h5>{title}</h5>
+              <h5 className={styles.cards_title}>{title}</h5>
               <h5 className={styles.card_dots}>
                 {dots.map((dot, index) => (
                   <a
@@ -66,7 +66,7 @@ export default function Home() {
           <Row>
             <Col>
               <div className={styles.card_avatar}>
-                <Image src="/images/image-jeremy.png" alt="avatar" className={styles.avatar} width={100} height={100} />
+                <Image src="/images/image-jeremy.png" alt="avatar" className={styles.avatar} width={80} height={80} />
                 <div className={styles.card_avatar_info}>
                   <p className={styles.report_for}>Report for</p>
                   <h1 className={styles.card_title}>Jeremy Robson</h1>
@@ -97,21 +97,24 @@ export default function Home() {
               </Card>
             </Col>
             <Col>
+            <Row>
+              
+            </Row>
             <div className={styles.card_background_work}>
             </div>
             {displayData(titlesAndTimeframes[0].timeframes, titlesAndTimeframes[0].title)}
-            <div className={styles.card_background_play}> </div>
+            <div className={styles.card_background_exercise}> </div>
+            {displayData(titlesAndTimeframes[3].timeframes, titlesAndTimeframes[3].title)}
+            </Col>
+            <Col>
+            <div className={styles.card_background_play}></div>
             {displayData(titlesAndTimeframes[1].timeframes, titlesAndTimeframes[1].title)}
+            <div className={styles.card_background_social}></div>
+            {displayData(titlesAndTimeframes[4].timeframes, titlesAndTimeframes[4].title)}
             </Col>
             <Col>
             <div className={styles.card_background_study}></div>
             {displayData(titlesAndTimeframes[2].timeframes, titlesAndTimeframes[2].title)}
-            <div className={styles.card_background_exercise}></div>
-            {displayData(titlesAndTimeframes[3].timeframes, titlesAndTimeframes[3].title)}
-            </Col>
-            <Col>
-            <div className={styles.card_background_social}></div>
-            {displayData(titlesAndTimeframes[4].timeframes, titlesAndTimeframes[4].title)}
             <div className={styles.card_background_selfcare}></div>
             {displayData(titlesAndTimeframes[5].timeframes, titlesAndTimeframes[5].title)}
             </Col>
