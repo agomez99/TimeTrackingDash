@@ -2,11 +2,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Outfit', sans-serif;
 }
 a {
   text-decoration: none;
   text-transform: capitalize;
+  cursor: pointer;
+  font-family: none;
 }
 
 

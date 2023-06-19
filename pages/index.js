@@ -14,17 +14,10 @@ export default function Home() {
     setSelectedTimeframe(timeframe);
   }
 
-  const { title: workTitle, timeframes: workTimeframes } = data[0];
-  const { title: playTitle, timeframes: playTimeframes } = data[1];
-  const { title: studyTitle, timeframes: studyTimeframes } = data[2];
-  const { title: exerciseTitle, timeframes: exerciseTimeframes } = data[3];
-  const { title: socialTitle, timeframes: socialTimeframes } = data[4];
-  const { title: selfCareTitle, timeframes: selfCareTimeframes } = data[5];
+  const titlesAndTimeframes = data.map(({ title, timeframes }) => ({ title, timeframes }));
 
   const displayData = (data, title) => {
-    const timeframeData = data[selectedTimeframe];
-    const currentValue = timeframeData ? timeframeData.current : null;
-    const previousValue = timeframeData ? timeframeData.previous : null;
+    const { current: currentValue, previous: previousValue } = data[selectedTimeframe] || {};
 
     return (
       <div >
@@ -44,9 +37,9 @@ export default function Home() {
                     className={timeframes[index] === selectedTimeframe ? styles.selected : ''}
                     style={{
                       textDecoration: 'none',
-                      color: 'hsl(235, 45%, 61%)',
                       fontSize: '1.5rem',
-                      fontWeight: 'bold'
+                      fontWeight: 'bold',
+                      marginRight:'0.1rem',
                     }}
                   >
                     {dot}
@@ -76,7 +69,7 @@ export default function Home() {
                 <Image src="/images/image-jeremy.png" alt="avatar" className={styles.avatar} width={100} height={100} />
                 <div className={styles.card_avatar_info}>
                   <p className={styles.report_for}>Report for</p>
-                  <h1 className={styles.card_title}>Jeremy Robson.</h1>
+                  <h1 className={styles.card_title}>Jeremy Robson</h1>
                 </div>
               </div>
               <Card className={styles.card_main}>
@@ -90,10 +83,9 @@ export default function Home() {
                           className={timefr === selectedTimeframe ? styles.selected : ''}
                           style={{
                             textDecoration: 'none',
-                            color: 'hsl(235, 45%, 61%)',
-                            fontSize: '1.2rem',
-                            fontWeight: 'bold',
-                            fontStyle: "'Outfit', sans-serif'",
+                            fontSize: '1.1rem',
+                            fontFamily: "'Rubik', sans-serif",
+                            cursor: 'pointer'
                           }}
                         >
                           {timefr}
@@ -105,28 +97,23 @@ export default function Home() {
               </Card>
             </Col>
             <Col>
-              <div className={styles.card_background_work}>
-              </div>
-              {displayData(workTimeframes, workTitle)}
-              <div className={styles.card_background_play}>
-              </div>
-              {displayData(playTimeframes, playTitle)}
+            <div className={styles.card_background_work}>
+            </div>
+            {displayData(titlesAndTimeframes[0].timeframes, titlesAndTimeframes[0].title)}
+            <div className={styles.card_background_play}> </div>
+            {displayData(titlesAndTimeframes[1].timeframes, titlesAndTimeframes[1].title)}
             </Col>
             <Col>
-              <div className={styles.card_background_study}>
-              </div>
-              {displayData(studyTimeframes, studyTitle)}
-              <div className={styles.card_background_exercise}>
-              </div>
-              {displayData(exerciseTimeframes, exerciseTitle)}
+            <div className={styles.card_background_study}></div>
+            {displayData(titlesAndTimeframes[2].timeframes, titlesAndTimeframes[2].title)}
+            <div className={styles.card_background_exercise}></div>
+            {displayData(titlesAndTimeframes[3].timeframes, titlesAndTimeframes[3].title)}
             </Col>
             <Col>
-              <div className={styles.card_background_social}>
-              </div>
-              {displayData(socialTimeframes, socialTitle)}
-              <div className={styles.card_background_selfcare}>
-              </div>
-              {displayData(selfCareTimeframes, selfCareTitle)}
+            <div className={styles.card_background_social}></div>
+            {displayData(titlesAndTimeframes[4].timeframes, titlesAndTimeframes[4].title)}
+            <div className={styles.card_background_selfcare}></div>
+            {displayData(titlesAndTimeframes[5].timeframes, titlesAndTimeframes[5].title)}
             </Col>
           </Row>
         </Container>
